@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -29,7 +30,9 @@ export const UserPhotos = ({ username }: UserPhotosProps) => {
     }
   }, [inView, fetchNextPage, hasNextPage]);
 
-  if (isPending) return <PhotosSkeleton columns={columns} />;
+  if (isPending) {
+    return <PhotosSkeleton columns={columns} />;
+  }
 
   return (
     <PhotoGrid

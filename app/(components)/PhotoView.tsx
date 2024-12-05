@@ -1,4 +1,5 @@
 'use client';
+
 import { ClockIcon, DownloadIcon, ExternalLink, EyeIcon, HeartIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -21,7 +22,9 @@ export const PhotoView = ({ id }: Props) => {
   const [isLoading, setLoading] = useState(true);
   const { data, isPending } = useGetPhotoIdQuery(id);
 
-  if (isPending) return <SpinnerIcon className="mx-auto h-8 w-8 animate-spin" />;
+  if (isPending) {
+    return <SpinnerIcon className="mx-auto h-8 w-8 animate-spin" />;
+  }
 
   return (
     <>
@@ -81,7 +84,7 @@ export const PhotoView = ({ id }: Props) => {
             ))}
           </div>
         )}
-        <Button asChild variant={'outline'}>
+        <Button asChild variant="outline">
           <a href={data?.links.download} rel="noreferrer" target="_blank" download>
             <DownloadIcon />
             Download

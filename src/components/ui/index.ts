@@ -5,6 +5,5 @@ export * from './label';
 export * from './password-input';
 export * from './separator';
 export * from './skeleton';
-export * from './skeleton';
 export * from './sonner';
 export * from './textarea';

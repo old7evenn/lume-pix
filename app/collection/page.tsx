@@ -1,14 +1,14 @@
 import { ScrollToTop } from '../(components)';
-import { CollectionPhoto } from '../(components)/CollectionPhoto';
+import { CollectionPhoto } from '../(components)';
 
 interface Props {
-  searchParams: {
+  searchParams: Promise<{
     tag?: string;
-  };
+  }>;
 }
 
-export default async function Page({ searchParams }: Props) {
-  const query = await searchParams;
+export default async function Page(props: Props) {
+  const query = await props.searchParams;
 
   return (
     <>

@@ -11,26 +11,24 @@ export interface PhotoGridProps {
   ref?: (node?: Element | null) => void;
 }
 
-export const PhotoGrid = ({ columns, gridColumns, ref, isFetching, photos }: PhotoGridProps) => {
-  return (
-    <>
-      <div className={`grid gap-4 w-full grid-cols-2 auto-rows-5px ${gridColumns}`}>
-        {photos?.pages.map(page =>
-          page.map(photo => (
-            <div
-              key={photo.id}
-              style={{
-                gridRowEnd: `span ${Math.ceil((photo.height / photo.width) * 10)}`,
-              }}
-              className="relative overflow-hidden rounded-md"
-            >
-              <Photo {...photo} />
-            </div>
-          ))
-        )}
-      </div>
-      <div ref={ref}></div>
-      {isFetching && <PhotosSkeleton columns={columns} />}
-    </>
-  );
-};
+export const PhotoGrid = ({ columns, gridColumns, ref, isFetching, photos }: PhotoGridProps) => (
+  <>
+    <div className={`grid gap-4 w-full grid-cols-2 auto-rows-5px ${gridColumns}`}>
+      {photos?.pages.map(page =>
+        page.map(photo => (
+          <div
+            key={photo.id}
+            style={{
+              gridRowEnd: `span ${Math.ceil((photo.height / photo.width) * 10)}`,
+            }}
+            className="relative overflow-hidden rounded-md"
+          >
+            <Photo {...photo} />
+          </div>
+        ))
+      )}
+    </div>
+    <div ref={ref} />
+    {isFetching && <PhotosSkeleton columns={columns} />}
+  </>
+);

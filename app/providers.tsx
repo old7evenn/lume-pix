@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 
 import { AuthProvider } from '@/utils/contexts';
 
-import { Header } from './(components)/Header';
+import { Header } from './(components)';
 
 interface ProvidersProps {
   children: React.ReactNode;

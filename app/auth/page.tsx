@@ -8,14 +8,12 @@ export const metadata: Metadata = {
   description: 'Authentication forms built using the components.',
 };
 
-const AuthPage = async () => {
-  return (
-    <div className="lg:p-8">
-      <Providers stage={{ defaultStage: 'signIn' }}>
-        <FormContainer />
-      </Providers>
-    </div>
-  );
-};
+const AuthPage = async () => (
+  <div className="lg:p-8">
+    <Providers stage={{ defaultStage: 'signIn' }}>
+      <FormContainer />
+    </Providers>
+  </div>
+);
 
 export default AuthPage;

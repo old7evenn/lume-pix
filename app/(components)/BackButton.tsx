@@ -1,4 +1,5 @@
 'use client';
+
 import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -8,7 +9,7 @@ export const BackButton = () => {
   const router = useRouter();
 
   return (
-    <Button className="mb-4 mr-auto" variant={'ghost'} onClick={() => router.back()}>
+    <Button className="mb-4 mr-auto" variant="ghost" onClick={() => router.back()}>
       <ArrowLeft /> Back
     </Button>
   );

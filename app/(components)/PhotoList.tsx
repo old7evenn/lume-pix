@@ -31,8 +31,12 @@ export const PhotoList = () => {
     }
   }, [inView, fetchNextPage, hasNextPage]);
 
-  if (isPending) return <SpinnerIcon className="animate-spin h-8 w-8 mx-auto my-20" />;
-  if (!photos?.pages[0].length) return <EmptyPhoto />;
+  if (isPending) {
+    return <SpinnerIcon className="animate-spin h-8 w-8 mx-auto my-20" />;
+  }
+  if (!photos?.pages[0].length) {
+    return <EmptyPhoto />;
+  }
 
   return (
     <>

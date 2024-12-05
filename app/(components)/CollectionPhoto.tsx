@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -27,8 +28,12 @@ export const CollectionPhoto = ({ tag }: { tag: string }) => {
     }
   }, [inView, fetchNextPage, hasNextPage]);
 
-  if (isPending) return <SpinnerIcon className="animate-spin h-8 w-8 mx-auto my-20" />;
-  if (!photos?.pages.length) return <EmptyPhoto />;
+  if (isPending) {
+    return <SpinnerIcon className="animate-spin h-8 w-8 mx-auto my-20" />;
+  }
+  if (!photos?.pages.length) {
+    return <EmptyPhoto />;
+  }
 
   return (
     <>
