@@ -14,6 +14,7 @@ const inter = Montserrat({ subsets: ['latin'], weight: '400' });
 export const metadata: Metadata = {
   title: 'Unsplash',
   description: 'The internet’s source of freely-usable images.',
+  icons: ['logo.svg'],
 };
 
 export default function RootLayout({
@@ -22,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="scroll-smooth" lang="en">
       <body
         className={`min-h-screen flex flex-col items-center px-4 py-8 md:p-8 max-w-7xl mx-auto bg-background text-muted-foreground font-sans antialiased ${inter.className} `}
       >

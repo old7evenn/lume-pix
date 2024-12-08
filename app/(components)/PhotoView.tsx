@@ -11,7 +11,6 @@ import { cn } from '@/lib/utils';
 import { useGetPhotoIdQuery } from '@/utils/api/hooks/useGetPhotoIdQuery';
 import { formatViews, fromNow } from '@/utils/features/format-views';
 
-import { BackButton } from './BackButton';
 import { UserPhotos } from './UserPhotos';
 
 interface Props {
@@ -28,7 +27,6 @@ export const PhotoView = ({ id }: Props) => {
 
   return (
     <>
-      <BackButton />
       <section className="mx-auto mb-16 max-w-xl space-y-4">
         <div
           className={cn(

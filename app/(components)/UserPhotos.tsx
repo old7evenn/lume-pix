@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import { useColumns } from '@/hooks/useColumns';
 import { useGetUserPhotosQuery } from '@/utils/api/hooks';
 
 import { PhotoGrid } from './PhotoGrid';
@@ -14,8 +13,9 @@ interface UserPhotosProps {
 }
 
 export const UserPhotos = ({ username }: UserPhotosProps) => {
-  const { ref, inView } = useInView();
-  const { gridColumns, columns } = useColumns();
+  const { ref, inView } = useInView({
+    rootMargin: '0px 0px 800px 0px',
+  });
   const {
     data: photos,
     isFetching,
@@ -31,16 +31,8 @@ export const UserPhotos = ({ username }: UserPhotosProps) => {
   }, [inView, fetchNextPage, hasNextPage]);
 
   if (isPending) {
-    return <PhotosSkeleton columns={columns} />;
+    return <PhotosSkeleton />;
   }
 
-  return (
-    <PhotoGrid
-      ref={ref}
-      isFetching={isFetching}
-      columns={columns}
-      gridColumns={gridColumns}
-      photos={photos!}
-    />
-  );
+  return <PhotoGrid ref={ref} isFetching={isFetching} photos={photos!} />;
 };

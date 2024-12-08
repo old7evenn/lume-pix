@@ -4,16 +4,16 @@ import { Photo } from './Photo';
 import { PhotosSkeleton } from './PhotosSkeleton';
 
 export interface PhotoGridProps {
-  columns: number;
-  gridColumns: string;
   isFetching: boolean;
   photos: GetPhotosResponse;
   ref?: (node?: Element | null) => void;
 }
 
-export const PhotoGrid = ({ columns, gridColumns, ref, isFetching, photos }: PhotoGridProps) => (
+export const PhotoGrid = ({ ref, isFetching, photos }: PhotoGridProps) => (
   <>
-    <div className={`grid gap-4 w-full grid-cols-2 auto-rows-5px ${gridColumns}`}>
+    <div
+      className={`grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 w-full auto-rows-10px sm:auto-rows-20px md:auto-rows-auto-20px lg:auto-rows-30px`}
+    >
       {photos?.pages.map(page =>
         page.map(photo => (
           <div
@@ -28,7 +28,7 @@ export const PhotoGrid = ({ columns, gridColumns, ref, isFetching, photos }: Pho
         ))
       )}
     </div>
-    <div ref={ref} />
-    {isFetching && <PhotosSkeleton columns={columns} />}
+    <div ref={ref}></div>
+    {isFetching && <PhotosSkeleton />}
   </>
 );

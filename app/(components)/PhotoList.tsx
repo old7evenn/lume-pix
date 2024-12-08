@@ -5,17 +5,16 @@ import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { SpinnerIcon } from '@/components/icons';
-import { useColumns } from '@/hooks/useColumns';
 import { useGetPhotosQuery } from '@/utils/api/hooks/useGetPhotosQuery';
 
 import { EmptyPhoto } from './EmptyPhoto';
-import { PhotoColumnToggle } from './PhotoColumnToggle';
 import { PhotoGrid } from './PhotoGrid';
 
 export const PhotoList = () => {
   const [query, _] = useQueryState('query');
-  const { ref, inView } = useInView();
-  const { columns, toggleColumns, gridColumns } = useColumns();
+  const { ref, inView } = useInView({
+    rootMargin: '0px 0px 800px 0px',
+  });
 
   const {
     data: photos,
@@ -38,16 +37,5 @@ export const PhotoList = () => {
     return <EmptyPhoto />;
   }
 
-  return (
-    <>
-      <PhotoColumnToggle columns={columns} onToggle={toggleColumns} />
-      <PhotoGrid
-        ref={ref}
-        isFetching={isFetching}
-        columns={columns}
-        gridColumns={gridColumns}
-        photos={photos}
-      />
-    </>
-  );
+  return <PhotoGrid ref={ref} isFetching={isFetching} photos={photos} />;
 };

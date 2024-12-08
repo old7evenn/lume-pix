@@ -9,7 +9,7 @@ export const BackButton = () => {
   const router = useRouter();
 
   return (
-    <Button className="mb-4 mr-auto" variant="ghost" onClick={() => router.back()}>
+    <Button className="mr-auto mt-4" variant="ghost" onClick={() => router.back()}>
       <ArrowLeft /> Back
     </Button>
   );

@@ -18,9 +18,10 @@ const config: Config = {
     },
     extend: {
       gridAutoRows: {
+        '5px': '5px',
         '10px': '10px',
         '20px': '20px',
-        '5px': '5px',
+        '30px': '30px',
       },
       spacing: {
         'adaptive-padding': 'px-3 sm:px-5',

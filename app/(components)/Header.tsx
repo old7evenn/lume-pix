@@ -1,14 +1,18 @@
 'use client';
 
 import { User } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 import { Button } from '@/components/ui';
 import { useAuth } from '@/utils/contexts';
 import { logout } from '@/utils/services/auth';
 
+import { BackButton } from './BackButton';
+
 export const Header = () => {
   const { isLoggedIn, userName, loading } = useAuth();
+  const pathName = usePathname();
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -18,12 +22,12 @@ export const Header = () => {
     <header className="w-full mb-6">
       {!loading && (
         <div className="flex gap-4 items-center justify-between">
-          <div className="flex gap-4">
+          <Link href={'/'} className="flex gap-4">
             <User />
             <h1 className="text-md font-medium truncate overflow-hidden">
               {isLoggedIn ? userName : ''}
             </h1>
-          </div>
+          </Link>
           {isLoggedIn ? (
             <Button variant="outline" onClick={handleLogout}>
               sign-out
@@ -35,6 +39,7 @@ export const Header = () => {
           )}
         </div>
       )}
+      {pathName !== '/' && <BackButton />}
     </header>
   );
 };
