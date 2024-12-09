@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils';
 import { useGetPhotoIdQuery } from '@/utils/api/hooks/useGetPhotoIdQuery';
 import { formatViews, fromNow } from '@/utils/features/format-views';
 
+import { BackButton } from './BackButton';
 import { UserPhotos } from './UserPhotos';
 
 interface Props {
