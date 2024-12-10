@@ -21,7 +21,7 @@ export const Photo = ({ id, urls, alt_description, user }: Photo) => {
           isLoading ? 'blur-md grayscale' : 'blur-0 grayscale-0'
         )}
         alt={alt_description || ''}
-        src={urls.small}
+        src={urls.regular}
         onLoadingComplete={() => setLoading(false)}
         unoptimized
       />
