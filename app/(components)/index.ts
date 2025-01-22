@@ -1,4 +1,5 @@
 export * from './BackButton';
+export * from './BackToTop';
 export * from './CollectionPhoto';
 export * from './Header';
 export * from './Photo';

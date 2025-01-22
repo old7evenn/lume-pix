@@ -5,6 +5,7 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 import { Toaster } from '@/components/ui';
 
+import { BackToTop } from './(components)';
 import Providers from './providers';
 
 import './globals.css';
@@ -12,7 +13,7 @@ import './globals.css';
 const inter = Montserrat({ subsets: ['latin'], weight: '400' });
 
 export const metadata: Metadata = {
-  title: 'Unsplash',
+  title: 'LumePix',
   description: 'The internet’s source of freely-usable images.',
   icons: ['logo.svg'],
 };
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Providers>
           <NuqsAdapter>{children}</NuqsAdapter>
           <Toaster />
+          <BackToTop />
         </Providers>
       </body>
     </html>

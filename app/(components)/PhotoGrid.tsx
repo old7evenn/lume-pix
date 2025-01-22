@@ -3,10 +3,9 @@ import type { GetPhotosResponse } from '@/utils/api/hooks/useGetPhotosQuery';
 import { Photo } from './Photo';
 import { PhotosSkeleton } from './PhotosSkeleton';
 
-export interface PhotoGridProps {
+export interface PhotoGridProps extends React.ComponentProps<'div'> {
   isFetching: boolean;
   photos: GetPhotosResponse;
-  ref?: (node?: Element | null) => void;
 }
 
 export const PhotoGrid = ({ ref, isFetching, photos }: PhotoGridProps) => (
@@ -23,8 +22,8 @@ export const PhotoGrid = ({ ref, isFetching, photos }: PhotoGridProps) => (
             }}
             className="relative overflow-hidden rounded-md"
           >
-            <Photo {...photo} />
-          </div>
+            <Photo {...photo} key={photo.id}/>
+        </div>
         ))
       )}
     </div>
