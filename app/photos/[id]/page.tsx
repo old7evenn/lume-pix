@@ -1,4 +1,5 @@
-import { PhotoView, ScrollToTop } from '../../(components)';
+import { ScrollToTop } from "../../(components)";
+import { PhotoView } from "./(components)";
 
 interface Props {
   params: Promise<{ id: string }>;

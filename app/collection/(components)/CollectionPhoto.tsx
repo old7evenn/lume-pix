@@ -6,8 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { SpinnerIcon } from '@/components/icons';
 import { useGetPhotoCollectionQuery } from '@/utils/api/hooks';
 
-import { EmptyPhoto } from './EmptyPhoto';
-import { PhotoGrid } from './PhotoGrid';
+import { PhotoGrid, EmptyPhoto } from '../../(components)';
 
 export const CollectionPhoto = ({ tag }: { tag: string }) => {
   const { ref, inView } = useInView({

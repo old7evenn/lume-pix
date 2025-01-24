@@ -27,7 +27,6 @@ export const useSignUpForm = () => {
     },
   });
 
-  const router = useRouter();
   const postSingUpMutation = usePostSingUpMutation({
     options: {
       onSuccess: () =>
@@ -46,8 +45,8 @@ export const useSignUpForm = () => {
       toast.success('Sign in is successful 👍', {
         description: 'We are very glad to see you, have fun',
       });
-
-      router.push('/');
+    
+      goToSignIn();
     } catch (e) {
       console.error(e);
       signUpForm.setError('email', { message: 'email exists' });

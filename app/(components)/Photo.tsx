@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
-export const Photo = ({ id, urls, alt_description, user, height, width}: Photo) => {
+export const Photo = ({ id, urls, alt_description, user }: Photo) => {
   const [isLoading, setLoading] = useState(true);
 
   return (

@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { useGetPhotoIdQuery } from '@/utils/api/hooks/useGetPhotoIdQuery';
 import { formatViews, fromNow } from '@/utils/features/format-views';
 
-import { UserPhotos } from './UserPhotos';
+import { UserPhotos } from '../../../(components)/UserPhotos';
 
 interface Props {
   id: string;

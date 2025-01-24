@@ -1,6 +1,6 @@
 'use client';
 
-import { User } from 'lucide-react';
+import { GithubIcon, User } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -17,7 +17,9 @@ export const Header = () => {
 
   const handleLogout = async () => {
     await logout();
+    router.replace('/auth')
   };
+
   return (
     <header className="w-full mb-6">
       {!loading && (
@@ -28,15 +30,23 @@ export const Header = () => {
               {isLoggedIn ? userName : ''}
             </h1>
           </Link>
-          {isLoggedIn ? (
-            <Button variant="outline" onClick={handleLogout}>
-              sign-out
-            </Button>
-          ) : (
-            <Button variant="outline" onClick={() => router.push('/auth')}>
-              sign-in
-            </Button>
-          )}
+            <div className='flex items-center gap-4'>
+              <Button asChild variant={'ghost'} size={'icon'}>
+                <Link href='https://github.com/old7evenn' target='_blanck' className='text-muted-foreground hover:text-primary'>
+                  <GithubIcon />
+                  <span className='sr-only'>GitHub</span>
+                </Link>
+              </Button>
+              {isLoggedIn ? (
+                <Button variant="outline" onClick={handleLogout}>
+                  sign-out
+                </Button>
+              ) : (
+                <Button variant="outline" onClick={() => router.push('/auth')}>
+                  sign-in
+                </Button>
+              )}
+          </div>
         </div>
       )}
       {pathName !== '/' && <BackButton />}

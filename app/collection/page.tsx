@@ -1,4 +1,5 @@
-import { CollectionPhoto, ScrollToTop } from '../(components)';
+import { ScrollToTop } from '../(components)';
+import { CollectionPhoto } from './(components)';
 
 interface Props {
   searchParams: Promise<{

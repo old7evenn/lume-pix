@@ -1,12 +1,10 @@
-import { Suspense } from 'react';
+import { PhotoList, Search } from './(components)';
 
-import { PhotoList, SearchPhoto } from './(components)';
-
-export default function Home() {
+export default async function Home() {    
   return (
-    <Suspense>
-      <SearchPhoto />
+    <>
+      <Search />
       <PhotoList />
-    </Suspense>
+    </>
   );
 }

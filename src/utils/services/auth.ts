@@ -7,6 +7,7 @@ import {
 } from 'firebase/auth';
 
 import { auth, provider } from './firebase';
+import { logoutUser, postUser } from '../api/requests';
 
 export const registerWithEmailAndPassword = async (
   name: string,
@@ -22,18 +23,21 @@ export const registerWithEmailAndPassword = async (
 
 export const logInWithEmailAndPassword = async (email: string, password: string) => {
   const result = await signInWithEmailAndPassword(auth, email, password);
+  await postUser({ params: result })  
 
   return result;
 };
 
 export const logInWithGoogle = async () => {
   const result = await signInWithPopup(auth, provider);
+  await postUser({ params: result })  
 
   return result;
 };
 
 export const logout = async () => {
   const result = await signOut(auth);
+  await logoutUser({ params: { cookiesName: 'token' } });
 
   return result;
 };
