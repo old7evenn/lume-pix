@@ -17,7 +17,7 @@ export const Header = () => {
 
   const handleLogout = async () => {
     await logout();
-    router.replace('/auth')
+    router.replace('/auth');
   };
 
   return (
@@ -30,22 +30,26 @@ export const Header = () => {
               {isLoggedIn ? userName : ''}
             </h1>
           </Link>
-            <div className='flex items-center gap-4'>
-              <Button asChild variant={'ghost'} size={'icon'}>
-                <Link href='https://github.com/old7evenn' target='_blanck' className='text-muted-foreground hover:text-primary'>
-                  <GithubIcon />
-                  <span className='sr-only'>GitHub</span>
-                </Link>
+          <div className="flex items-center gap-4">
+            <Button asChild size={'icon'} variant={'ghost'}>
+              <Link
+                href="https://github.com/old7evenn"
+                className="text-muted-foreground hover:text-primary"
+                target="_blanck"
+              >
+                <GithubIcon />
+                <span className="sr-only">GitHub</span>
+              </Link>
+            </Button>
+            {isLoggedIn ? (
+              <Button variant="outline" onClick={handleLogout}>
+                sign-out
               </Button>
-              {isLoggedIn ? (
-                <Button variant="outline" onClick={handleLogout}>
-                  sign-out
-                </Button>
-              ) : (
-                <Button variant="outline" onClick={() => router.push('/auth')}>
-                  sign-in
-                </Button>
-              )}
+            ) : (
+              <Button variant="outline" onClick={() => router.push('/auth')}>
+                sign-in
+              </Button>
+            )}
           </div>
         </div>
       )}

@@ -1,5 +1,4 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 
@@ -45,7 +44,7 @@ export const useSignUpForm = () => {
       toast.success('Sign in is successful 👍', {
         description: 'We are very glad to see you, have fun',
       });
-    
+
       goToSignIn();
     } catch (e) {
       console.error(e);

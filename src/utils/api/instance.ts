@@ -6,4 +6,4 @@ export const api = new HttpClient({
 
 export const serverApi = new HttpClient({
   baseURL: 'api',
-})
+});

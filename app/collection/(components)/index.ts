@@ -1,1 +1,1 @@
-export * from './CollectionPhoto'
+export * from './CollectionPhoto/CollectionPhoto';

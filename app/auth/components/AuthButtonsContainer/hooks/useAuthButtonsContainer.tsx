@@ -8,7 +8,7 @@ export const useAuthButtonsContainer = () => {
   const onGoogleClick = async () => {
     try {
       await logInWithGoogle();
-      
+
       toast.success('Sign in is successful 👍', {
         description: 'We are very glad to see you, have fun',
       });

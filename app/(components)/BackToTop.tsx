@@ -34,4 +34,4 @@ export const BackToTop = () => {
       <ArrowUp />
     </Button>
   );
-}
+};

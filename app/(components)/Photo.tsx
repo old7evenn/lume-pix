@@ -13,7 +13,7 @@ export const Photo = ({ id, urls, alt_description, user }: Photo) => {
     <Link
       href={`/photos/${id}`}
       className="group relative aspect-square overflow-hidden rounded-md"
-      style={{ width: '100%', height: '100%' }} 
+      style={{ width: '100%', height: '100%' }}
     >
       <article>
         <Image
@@ -36,7 +36,7 @@ export const Photo = ({ id, urls, alt_description, user }: Photo) => {
             height={40}
             src={user.profile_image.large}
             width={40}
-            />
+          />
           <div className="flex flex-col gap-1 max-w-16 sm:max-w-full">
             <h2 className="line-clamp-1 font-semibold text-sm text-white">{user.name}</h2>
             <p className="text-white text-xs truncate">@{user.username}</p>

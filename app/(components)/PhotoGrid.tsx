@@ -22,8 +22,8 @@ export const PhotoGrid = ({ ref, isFetching, photos }: PhotoGridProps) => (
             }}
             className="relative overflow-hidden rounded-md"
           >
-            <Photo {...photo} key={photo.id}/>
-        </div>
+            <Photo {...photo} key={photo.id} />
+          </div>
         ))
       )}
     </div>
