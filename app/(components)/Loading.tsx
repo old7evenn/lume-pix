@@ -9,6 +9,6 @@ type LoadingProps = ComponentPropsWithRef<'svg'> & {
 
 export const Loading = ({ classsName, ...props }: LoadingProps) => {
   return (
-    <SpinnerIcon {...props} className={cn('animate-spin h-8 w-8 mx-auto my-20', classsName)} />
+    <SpinnerIcon {...props} className={cn('animate-spin h-8 w-8 mx-auto', classsName)} />
   );
 };

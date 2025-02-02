@@ -43,7 +43,7 @@ export const useSignInForm = () => {
   const goToSignUp = () => setStage('signUp');
 
   return {
-    state: { loading: postSignInMutation.isPending },
+    state: { loading: true },
     form: signInForm,
     functions: { onSubmit, goToSignUp },
     error,

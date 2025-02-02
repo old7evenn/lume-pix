@@ -23,7 +23,7 @@ const PasswordInput = forwardRef<HTMLInputElement, InputProps>(({ ...props }, re
         {...props}
       />
       <Button
-        className="absolute right-0 top-0 h-10 px-3 py-2 hover:bg-transparent bg-transparent  focus:outline-none focus:ring-0"
+        className="absolute right-0 top-0 h-10 px-3 py-2 hover:bg-transparent bg-transparent  focus:outline-hidden focus:ring-0"
         disabled={!props.value || props.disabled}
         size="sm"
         type="button"

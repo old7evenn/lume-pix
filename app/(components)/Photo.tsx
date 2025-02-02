@@ -15,7 +15,6 @@ export const Photo = ({ id, urls, alt_description, user }: Photo) => {
       className="group relative aspect-square overflow-hidden rounded-md z-20"
       style={{ width: '100%', height: '100%' }}
     >
-      <article>
         <Image
           fill
           className={cn(
@@ -24,11 +23,10 @@ export const Photo = ({ id, urls, alt_description, user }: Photo) => {
           )}
           alt={alt_description || ''}
           src={urls.regular}
-          onLoadingComplete={() => setLoading(false)}
+          onLoad={() => setLoading(false)}
           unoptimized
         />
-      </article>
-      <div className="invisible z-50 flex size-full items-end justify-start rounded-[inherit] bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-0 duration-300 group-hover:visible group-hover:opacity-100">
+      <div className="invisible z-50 flex size-full items-end justify-start rounded-[inherit] bg-linear-to-t from-black/75 via-transparent to-transparent opacity-0 duration-300 group-hover:visible group-hover:opacity-100">
         <div className="flex items-center gap-1 p-2 md:gap-4 md:p-4">
           <Image
             alt={alt_description || ''}
