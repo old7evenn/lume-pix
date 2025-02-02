@@ -1,0 +1,20 @@
+{
+  "theme.light": "Світла",
+  "theme.dark": "Темна",
+
+  "auth.signIn.title": "Увійдіть в свій акаунт",
+  "auth.signIn.subTitle": "Введіть свій email та пароль",
+  "auth.signIn.password.placeholder": "ваш дуже секретний пароль",
+  "auth.signIn.button": "Увійти",
+  "auth.signIn.redirect": "створити новий акаунт",
+
+  "auth.signUp.title": "Створити акаунт",
+  "auth.signUp.subTitle": "Введіть свій email нижче, щоб створити свій акаунт",
+  "auth.signUp.name.placeholder": "ваше дивовижне ім'я",
+  "auth.signUp.password.placeholder": "ваш дуже секретний пароль",
+  "auth.signUp.confirmPassword.placeholder": "підтвердіть свій пароль, друже",
+  "auth.signUp.confirmPassword.error": "підтвердіть свій пароль",
+  "auth.signUp.confirmPassword.success": "паролі однакові",
+  "auth.signUp.button": "Зареєструватися",
+  "auth.signUp.redirect": "вже є акаунт"
+}

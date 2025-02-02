@@ -1,0 +1,20 @@
+{
+  "theme.light": "Light",
+  "theme.dark": "Dark",
+
+  "auth.signIn.title": "Login to your account",
+  "auth.signIn.subTitle": "Enter your email and password",
+  "auth.signIn.password.placeholder": "your very secret password",
+  "auth.signIn.button": "Sign in",
+  "auth.signIn.redirect": "create new account",
+
+  "auth.signUp.title": "Create an account",
+  "auth.signUp.subTitle": "Enter your email below to create your account",
+  "auth.signUp.name.placeholder": "your amazing name",
+  "auth.signUp.password.placeholder": "your very secret password",
+  "auth.signUp.confirmPassword.placeholder": "confirm your password dude",
+  "auth.signUp.confirmPassword.error": "confirm your password",
+  "auth.signUp.confirmPassword.success": "passwords are equal",
+  "auth.signUp.button": "Sign Up",
+  "auth.signUp.redirect": "have account already"
+}

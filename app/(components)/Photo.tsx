@@ -12,7 +12,7 @@ export const Photo = ({ id, urls, alt_description, user }: Photo) => {
   return (
     <Link
       href={`/photos/${id}`}
-      className="group relative aspect-square overflow-hidden rounded-md"
+      className="group relative aspect-square overflow-hidden rounded-md z-20"
       style={{ width: '100%', height: '100%' }}
     >
       <article>

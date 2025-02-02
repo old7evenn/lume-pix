@@ -1,12 +1,13 @@
 'use client';
 
-import { Button } from '@nextui-org/react';
+import { Button } from '@heroui/react';
 import { EyeIcon, EyeOffIcon } from 'lucide-react';
 import { forwardRef, useState } from 'react';
 
 import type { InputProps } from './input';
 
 import { Input } from './input';
+
 
 const PasswordInput = forwardRef<HTMLInputElement, InputProps>(({ ...props }, ref) => {
   const [showPassword, setShowPassword] = useState(false);

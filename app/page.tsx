@@ -2,11 +2,11 @@ import { Suspense } from 'react';
 
 import { PhotoList, Search } from './(components)';
 
-export default async function Home() {
-  return (
-    <Suspense>
-      <Search />
-      <PhotoList />
-    </Suspense>
-  );
-}
+const Home = async () => (
+  <Suspense>
+    <Search />
+    <PhotoList />
+  </Suspense>
+);
+
+export default Home;

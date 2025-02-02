@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { SpinnerIcon } from '@/components/icons';
+import { I18nText } from '@/components/common/I18nText';
 import {
   Button,
   Form,
@@ -15,19 +15,25 @@ import {
   Label,
   PasswordInput,
 } from '@/components/ui';
+import { useI18n } from '@/utils/contexts';
 
+import { Loading } from '../../../(components)';
 import { AuthButtonsContainer } from '../AuthButtonsContainer/AuthButtonsContainer';
 import { useSignUpForm } from './hooks/useSingUpForm';
 
 export const SignUpForm = () => {
   const { form, functions, state } = useSignUpForm();
 
+  const i18n = useI18n();
+
   return (
     <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
       <div className="flex flex-col space-y-2 text-center">
-        <h1 className="text-2xl font-semibold tracking-tight">Create an account</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">
+          <I18nText path={'auth.signUp.title'} />
+        </h1>
         <p className="text-sm text-muted-foreground">
-          Enter your email below to create your account
+          <I18nText path={'auth.signUp.subTitle'} />
         </p>
       </div>
       <div className="grid gap-2">
@@ -75,7 +81,7 @@ export const SignUpForm = () => {
                       autoCapitalize="none"
                       autoComplete="lastName"
                       autoCorrect="off"
-                      placeholder="your second amazing name"
+                      placeholder={i18n.formatMessage({ id: 'auth.signUp.name.placeholder' })}
                       {...field}
                     />
                   </FormControl>
@@ -98,7 +104,7 @@ export const SignUpForm = () => {
                       autoCapitalize="none"
                       autoComplete="password"
                       autoCorrect="off"
-                      placeholder="your very secret password"
+                      placeholder={i18n.formatMessage({ id: 'auth.signUp.password.placeholder' })}
                       {...field}
                     />
                   </FormControl>
@@ -121,14 +127,22 @@ export const SignUpForm = () => {
                       autoCapitalize="none"
                       autoComplete="passwordConfirmation"
                       autoCorrect="off"
-                      placeholder="confirm your password dude"
+                      placeholder={i18n.formatMessage({
+                        id: 'auth.signUp.confirmPassword.placeholder',
+                      })}
                       {...field}
                     />
                   </FormControl>
-                  {state.isPasswordsEqual && !!field.value && (
-                    <FormDescription>passwords are equal 🔥</FormDescription>
+                  {state.isPasswordsEqual && !!field.value.length && (
+                    <FormDescription>
+                      <I18nText path={'auth.signUp.confirmPassword.success'} /> 🔥
+                    </FormDescription>
                   )}
-                  {!state.isPasswordsEqual && <FormMessage>confirm your password</FormMessage>}
+                  {!state.isPasswordsEqual && (
+                    <FormMessage>
+                      <I18nText path={'auth.signUp.confirmPassword.error'} />
+                    </FormMessage>
+                  )}
 
                   <FormMessage />
                 </FormItem>
@@ -137,14 +151,16 @@ export const SignUpForm = () => {
               control={form.control}
             />
             <Button className="w-full" disabled={state.loading}>
-              {state.loading && <SpinnerIcon className="mr-2 h-4 w-4 animate-spin" />}
-              Sign up
+              {state.loading && <Loading />}
+              <I18nText path={'auth.signUp.button'} />
             </Button>
           </form>
         </Form>
         <div className="flex justify-center ">
           <Button disabled={state.loading} variant="link" onClick={functions.goToSignIn}>
-            <span className="bg-background px-2 text-muted-foreground">have account already</span>
+            <span className="bg-background px-2 text-muted-foreground">
+              <I18nText path={'auth.signUp.redirect'} />
+            </span>
           </Button>
         </div>
 

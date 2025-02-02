@@ -5,12 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import { SpinnerIcon } from '@/components/icons';
 import { Button, Separator } from '@/components/ui';
 import { cn } from '@/lib/utils';
 import { useGetPhotoIdQuery } from '@/utils/api/hooks/useGetPhotoIdQuery';
 import { formatViews, fromNow } from '@/utils/features/format-views';
 
+import { Loading } from '../../../(components)';
 import { UserPhotos } from '../../../(components)/UserPhotos';
 
 interface Props {
@@ -22,7 +22,7 @@ export const PhotoView = ({ id }: Props) => {
   const { data, isPending } = useGetPhotoIdQuery(id);
 
   if (isPending) {
-    return <SpinnerIcon className="mx-auto h-8 w-8 animate-spin" />;
+    return <Loading />;
   }
 
   return (

@@ -24,7 +24,7 @@ export const BackToTop = () => {
   }, []);
   return (
     <Button
-      className={`fixed bottom-[70px] left-5 size-12 rounded-full transition-all ${
+      className={`fixed bottom-[70px] left-5 size-12 rounded-full transition-all z-20 ${
         showButton ? 'opacity-100' : 'opacity-0'
       }`}
       size={'icon'}

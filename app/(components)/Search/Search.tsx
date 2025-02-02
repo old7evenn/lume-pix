@@ -17,7 +17,7 @@ export const Search = () => {
     <div className="relative w-full flex max-w-lg items-center justify-center gap-2 mb-4">
       <SearchIcon className="-translate-y-1/2 absolute top-1/2 left-4 size-4 text-muted-foreground" />
       <Input
-        className="rounded-full px-4 py-2 pl-10 bg-[#eee]"
+        className="rounded-full px-4 py-2 pl-10"
         defaultValue={query}
         type="text"
         onChange={e => debounced(e.target.value)}

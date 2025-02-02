@@ -9,6 +9,7 @@ import { useAuth } from '@/utils/contexts';
 import { logout } from '@/utils/services/auth';
 
 import { BackButton } from './BackButton';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Header = () => {
   const { isLoggedIn, userName, loading } = useAuth();
@@ -21,7 +22,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="w-full mb-6">
+    <header className="container my-6">
       {!loading && (
         <div className="flex gap-4 items-center justify-between">
           <Link href={'/'} className="flex gap-4">
@@ -34,7 +35,7 @@ export const Header = () => {
             <Button asChild size={'icon'} variant={'ghost'}>
               <Link
                 href="https://github.com/old7evenn"
-                className="text-muted-foreground hover:text-primary"
+                className="text-muted-foreground hover:text-primary px-2"
                 target="_blanck"
               >
                 <GithubIcon />
@@ -50,6 +51,16 @@ export const Header = () => {
                 sign-in
               </Button>
             )}
+            {/* <Select defaultValue={'en'}>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="en">en</SelectItem>
+                <SelectItem value="uk">uk</SelectItem>
+              </SelectContent>
+            </Select> */}
+            <ThemeToggle />
           </div>
         </div>
       )}

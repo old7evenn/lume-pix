@@ -1,11 +1,13 @@
-import { ScrollToTop } from '../(components)';
+import { Suspense } from 'react';
+
+import { Loading, ScrollToTop } from '../(components)';
 import { CollectionPhoto } from './(components)';
 
-export default async function Page() {
-  return (
-    <>
-      <ScrollToTop />
-      <CollectionPhoto />
-    </>
-  );
-}
+const CollectionPage = () => (
+  <Suspense fallback={<Loading />}>
+    <ScrollToTop />
+    <CollectionPhoto />
+  </Suspense>
+);
+
+export default CollectionPage;

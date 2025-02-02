@@ -1,6 +1,7 @@
-import { GoogleIcon, SpinnerIcon } from '@/components/icons';
+import { GoogleIcon } from '@/components/icons';
 import { Button } from '@/components/ui';
 
+import { Loading } from '../../../(components)';
 import { useAuthButtonsContainer } from './hooks/useAuthButtonsContainer';
 
 interface AuthButtonsContainerProps {
@@ -27,11 +28,7 @@ export const AuthButtonsContainer: React.FC<AuthButtonsContainerProps> = ({ load
           variant="outline"
           onClick={functions.onGoogleClick}
         >
-          {loading ? (
-            <SpinnerIcon className="mr-2 h-4 w-4 animate-spin" />
-          ) : (
-            <GoogleIcon className="mr-2 h-4 w-4" />
-          )}
+          {loading ? <Loading /> : <GoogleIcon className="mr-2 h-4 w-4" />}
           Google
         </Button>
       </div>

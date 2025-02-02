@@ -2,15 +2,14 @@ import { ScrollToTop } from '../../(components)';
 import { PhotoView } from './(components)';
 
 interface Props {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }
 
-export default async function Page({ params }: Props) {
-  const photo = await params;
-  return (
-    <>
-      <ScrollToTop />
-      <PhotoView id={photo.id} />
-    </>
-  );
-}
+const PhotoIdPage = ({ params }: Props) => (
+  <>
+    <ScrollToTop />
+    <PhotoView id={params.id} />
+  </>
+);
+
+export default PhotoIdPage;

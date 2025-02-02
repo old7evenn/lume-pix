@@ -1,3 +1,7 @@
+type ComponentPropsWithRef<Component> = import("react").ComponentProps<Component> & {
+  ref?: import("react").Ref<Element>;
+};
+
 interface Exif {
   aperture: string;
   exposure_time: string;

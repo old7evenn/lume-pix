@@ -1,8 +1,7 @@
 'use client';
 
-import { SpinnerIcon } from '@/components/icons';
-
 import { EmptyPhoto } from '../EmptyPhoto';
+import { Loading } from '../Loading';
 import { PhotoGrid } from '../PhotoGrid';
 import { usePhotoList } from './hooks/usePhotoList';
 
@@ -10,7 +9,7 @@ export const PhotoList = () => {
   const { state } = usePhotoList();
 
   if (state.isLoading) {
-    return <SpinnerIcon className="animate-spin h-8 w-8 mx-auto my-20" />;
+    return <Loading />;
   }
   if (!state.photos?.pages[0].length) {
     return <EmptyPhoto />;
